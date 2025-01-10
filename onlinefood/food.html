@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOOD FACTORY</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    
+    <style>
+       /* CSS Style For All */
+*{
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+h2 {
+    color: rgb(226, 74, 74);
+    font-size: 32px;
+    margin-bottom: 25px;
+  }
+  
+a {
+  color: rgb(226, 74, 74);
+  text-decoration: none;
+  transition: 0.5s;
+}
+a:hover {
+  color: #6c5ce7;
+}
+.container {
+  width: 85%;
+  margin: 0 auto;
+  padding: 15px;
+}
+.img-responsive {
+  width: 100%;
+  }
+.img-curve {
+  border-radius: 10px;
+}
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+
+.navbar {
+  margin-top: 80px;
+}
+.navbar-menu {
+  padding: 10px 0;
+  background: #fff;
+  transition: all 0.5s ease-in-out;
+}
+.site-top-nav {
+  background: #fff;
+  padding: 0;
+  box-shadow: 2px -4px 13px 0px #000;
+}
+.navbar-fixed-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1030;
+  box-shadow: 2px -7px 13px 0px #000;
+}
+
+.navbar-fixed-top .container {
+  padding: 0 15px;
+}
+
+.logo {
+  width: 120px;
+  float: left;
+  padding: 5px 5px;
+}
+  .menu {
+    line-height: 60px;
+    position: relative;
+  }
+  .menu ul {
+    list-style: none;
+    width: 80%;
+    float: right;
+  }
+  .menu ul li {
+    display: inline;
+    padding: 10px;
+    font-weight: bold;
+  }
+  .menu ul li:last-of-type {
+    text-align: center;
+  }
+  .hvr-underline-from-center:before {
+    background: #6c5ce7;
+    height: 2px;
+    bottom: 10px;
+  }
+  .badge {
+    color: #fff;
+    background: #ff0000;
+    font-size: 12px;
+    padding: 2px 3px;
+    border-radius: 3px;
+  }
+  .shopping-cart {
+    color: #6c5ce7;
+    cursor: pointer;
+    font-size: 18px;
+  }
+  
+ 
+
+        .food-menu-box {
+            display: inline-block;
+            width: 30%;
+            margin: 15px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .food-menu-box:hover {
+            transform: scale(1.05);
+            border-color: #e84f3f;
+        }
+
+        .food-menu-img img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .food-menu-desc h4 {
+            font-size: 20px;
+            color: #e84f3f;
+        }
+
+        .food-price {
+            font-size: 18px;
+            color: #e84f3f;
+        }
+
+        .food-details {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .btn-primary {
+            background-color: #e84f3f;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background-color: #c9442e;
+        }
+
+        .food-menu-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 30px;
+        }
+
+        .food-menu-container .food-menu-box {
+            width: 30%;
+        }
+        .footer {
+  overflow: hidden;
+  background: #e84f3d;
+  color: #fff;
+}
+.footer .grid-3 {
+  padding: 30px 0;
+}
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <nav id="site-top-nav" class="navbar-menu navbar-fixed-top">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logo.png" class="img-responsive">
+                        <span class="logo-text">FACTORY.com</span>
+                    </a>
+                </div>
+                <div class="menu text-right">
+                    <ul>
+                        <li><a class="hvr-underline-from-center" href="index.html">Home</a></li>
+                        <li><a class="hvr-underline-from-center" href="food.html">Foods</a></li>
+                        <li><a class="hvr-underline-from-center" href="orders.html">Orders</a></li>
+                        <li><a class="hvr-underline-from-center" href="login.html">Login</a></li>
+                        <li><a class="hvr-underline-from-center" href="register.html">Register</a></li>
+                        <li><a class="hvr-underline-from-center" href="">Logout</a></li>
+                        <li>
+                            <a id="shopping-cart" class="shopping-cart" aria-label="Shopping Cart" href="cart.html">
+                                <i class="fa fa-cart-arrow-down"></i>
+                                <span class="badge"></span>
+                            </a>
+                        </li>
+  
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="food-section" style="margin-top: 220px;">
+        <!-- Veg Food Section -->
+        <h2 class="text-center">Veg Food</h2>
+        <div class="food-menu-container">
+            <div class="food-menu-box">
+                <form action="">
+                    <div class="food-menu-img">
+                        <img src="images/pizza.jpg" alt="Pizza" class="img-responsive img-curve">
+                    </div>
+                    <div class="food-menu-desc">
+                        <h4>Pizza</h4>
+                        <p class="food-price">₹8.00</p>
+                        <p class="food-details">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus excepturi porro.</p>
+                        <input type="submit" class="btn-primary" value="Add To Cart">
+                    </div>
+                </form>
+            </div>
+
+            <div class="food-menu-box">
+                <form action="">
+                    <div class="food-menu-img">
+                        <img src="images/dosa.webp" alt="Dosa" class="img-responsive img-curve">
+                    </div>
+                    <div class="food-menu-desc">
+                        <h4>Dosa</h4>
+                        <p class="food-price">₹8.00</p>
+                        <p class="food-details">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus excepturi porro.</p>
+                        <input type="submit" class="btn-primary" value="Add To Cart">
+                    </div>
+                </form>
+            </div>
+
+            <div class="food-menu-box">
+                <form action="">
+                    <div class="food-menu-img">
+                        <img src="images/roti.jpg" alt="Roti With Paneer Masala" class="img-responsive img-curve">
+                    </div>
+                    <div class="food-menu-desc">
+                        <h4>Roti with Paneer Masala</h4>
+                        <p class="food-price">₹8.00</p>
+                        <p class="food-details">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus excepturi porro.</p>
+                        <input type="submit" class="btn-primary" value="Add To Cart">
+                    </div>
+                </form>
+            </div>
+        </div>
+       
+    </section>
+
+    <!-- Non-Veg Food Section -->
+    <section class="food-section">
+        <h2 class="text-center">Non-Veg Food</h2>
+        <div class="food-menu-container">
+            <div class="food-menu-box">
+                <form action="">
+                    <div class="food-menu-img">
+                        <img src="images/chicken Gravy.jpg" alt="Chicken Curry" class="img-responsive img-curve">
+                    </div>
+                    <div class="food-menu-desc">
+                        <h4>Chicken Curry</h4>
+                        <p class="food-price">₹10.00</p>
+                        <p class="food-details">A spicy and delicious chicken curry made with aromatic spices.</p>
+                        <input type="submit" class="btn-primary" value="Add To Cart">
+                    </div>
+                </form>
+            </div>
+
+            <div class="food-menu-box">
+                <form action="">
+                    <div class="food-menu-img">
+                        <img src="images/Briyani.jpg" alt="Mutton Biryani" class="img-responsive img-curve">
+                    </div>
+                    <div class="food-menu-desc">
+                        <h4>Chicken Biryani</h4>
+                        <p class="food-price">₹12.00</p>
+                        <p class="food-details">Succulent Chicken pieces cooked with aromatic basmati rice.</p>
+                        <input type="submit" class="btn-primary" value="Add To Cart">
+                    </div>
+                </form>
+            </div>
+
+            <div class="food-menu-box">
+                <form action="">
+                    <div class="food-menu-img">
+                        <img src="images/fried.jpg" alt="Fried Chicken" class="img-responsive img-curve">
+                    </div>
+                    <div class="food-menu-desc">
+                        <h4>Fried Chicken</h4>
+                        <p class="food-price">₹6.00</p>
+                        <p class="food-details">Crispy and tender fried chicken with a perfect seasoning.</p>
+                        <input type="submit" class="btn-primary" value="Add To Cart">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Snacks Section -->
+    <section class="food-section">
+        <h2 class="text-center">Snacks</h2>
+        <div class="food-menu-container">
+            <div class="food-menu-box">
+                <form action="">
+                    <div class="food-menu-img">
+                        <img src="images/b1.jpg" alt="Burger" class="img-responsive img-curve">
+                    </div>
+                    <div class="food-menu-desc">
+                        <h4>Burger</h4>
+                        <p class="food-price">₹5.00</p>
+                        <p class="food-details">A juicy cheese burger made with the finest ingredients.</p>
+                        <input type="submit" class="btn-primary" value="Add To Cart">
+                    </div>
+                </form>
+            </div>
+
+            <div class="food-menu-box">
+                <form action="">
+                    <div class="food-menu-img">
+                        <img src="images/french fries.jpeg" alt="French Fries" class="img-responsive img-curve">
+                    </div>
+                    <div class="food-menu-desc">
+                        <h4>French Fries</h4>
+                        <p class="food-price">₹3.00</p>
+                        <p class="food-details">Crispy and salted fries, a perfect snack for everyone.</p>
+                        <input type="submit" class="btn-primary" value="Add To Cart">
+                    </div>
+                </form>
+            </div>
+
+            <div class="food-menu-box">
+                <form action="">
+                    <div class="food-menu-img">
+                        <img src="images/somasa.jpeg" alt="Samosa" class="img-responsive img-curve">
+                    </div>
+                    <div class="food-menu-desc">
+                        <h4>Samosa</h4>
+                        <p class="food-price">₹2.00</p>
+                        <p class="food-details">A crispy, spicy snack stuffed with potatoes and peas.</p>
+                        <input type="submit" class="btn-primary" value="Add To Cart">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <div class="footer">
+        <div class="container">
+            <p class="text-center">Copyright &copy; 2024 - Food Factory.com</p>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <!-- Jquery UI -->
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+
+</body>
+</html>
